@@ -56,5 +56,36 @@ public class Stack {
         }// END IF
 
         return this.top.data;
-    }
+    }// END peek_top()
+
+    public boolean is_member(int data)
+    {
+        if (this.is_empty() == true)
+        {
+            throw new IllegalStateException();
+        }// END IF
+
+        if (this.peek_top() == this.top.data)
+        {
+            return true;
+        }
+        else
+        {
+            Node temp = this.top;
+
+            while (temp.next_node != null)
+            {
+                if (temp.data == data)
+                {
+                    return true;
+                }
+                else
+                {
+                    temp = temp.next_node;
+                }// END INNER IF
+            }// END WHILE
+
+            return false;
+        }// END IF
+    }// END is_member()
 }// END CLASS StackImplementatino

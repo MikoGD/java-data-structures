@@ -8,11 +8,13 @@ public class MainJava
         int data;
 
         test_stack.push(1);
-        System.out.println(test_stack.peek_top());
         test_stack.push(2);
         test_stack.push(3);
         test_stack.push(4);
-        System.out.println(test_stack.peek_top());
+        System.out.println(test_stack.is_member(1));
+        System.out.println(test_stack.is_member(4));
+        System.out.println(test_stack.is_member(3));
+
         while(test_stack.is_empty() != true)
         {
             data = test_stack.pop();
