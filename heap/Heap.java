@@ -15,20 +15,6 @@ public class Heap
         heap_int = new int[size];
     }// END CONSTRUCTOR Heap()
 
-    public static void main(String[] args)
-    {
-        int i;
-        Heap my_heap = new Heap(10);
-        int[] nums = {10, 9, 6, 4, 15, 12};
-
-        for (i = 0; i < nums.length; i++)
-        {
-            my_heap.add(nums[i]);
-        }// END FOR
-
-        my_heap.print_heap();
-    }// END main()
-
     private int get_parent_index(int index) {return (index - 1) / 2;}//END get_parent_index()
     private int get_left_child_index(int index) {return (index * 2) + 1;}// END get_left_child_index()
     private int get_right_child_index(int index) {return (index * 2) + 1;}// END get_right_child_index()
@@ -46,7 +32,7 @@ public class Heap
         if (size < max_capacity)
         {
             heap_int = Arrays.copyOf(heap_int, max_capacity * 2);
-        }
+        }// END IF
     }// END increase_capacity()
 
     private void swap(int index_1, int index_2)
@@ -133,5 +119,7 @@ public class Heap
         {
             System.out.printf("%d ", heap_int[i]);
         }// END FOR
+
+        System.out.println("");
     }// END print_heap()
 }// END CLASS Heap
