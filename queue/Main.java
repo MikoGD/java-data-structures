@@ -17,8 +17,16 @@ public class Main
         System.out.println(queue_int.is_member(6) + "\n");
         System.out.println(queue_int.is_member(3) + "\n");
 
-        queue_int.dequeue();
-        queue_int.dequeue();
+        try
+        {
+            queue_int.dequeue();
+            queue_int.dequeue();
+        }
+        catch (Exception e)
+        {
+            System.out.println(e);
+        }// END TRY
+
         queue_int.display_queue();
 
         queue_int.enqueue(8);

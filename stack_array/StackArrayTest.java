@@ -8,6 +8,16 @@ public class StackArrayTest
         int[] nums = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
         int i;
 
+        try
+        {
+            stack.pop();
+        }
+        catch (Exception e)
+        {
+            System.out.println(e);
+        }// END TRY
+
+        /*
         for (i = 0; i < nums.length; i++)
         {
             stack.push(nums[i]);
@@ -25,5 +35,6 @@ public class StackArrayTest
         System.out.println("Pop: " + stack.pop());
         System.out.println("Pop: " + stack.pop());
         stack.display_stack();
+        */
     }// END main()
 }// END CLASS StackArrayTest

@@ -30,7 +30,7 @@ public class StackArray
 
         for (index = 0; index < this.size; index++)
         {
-            if (this.array[index] < data)
+            if (this.array[index] == data)
             {
                 return true;
             }// END IF
@@ -39,26 +39,26 @@ public class StackArray
         return false;
     }// END is_member()
 
-    public void ensure_capacity()
+    public void push(int data) throws StackException
     {
-        if (this.size >= this.max_capacity)
+        if (this.size == max_capacity)
         {
-            this.array = Arrays.copyOf(this.array, this.max_capacity * 2);
+            throw new StackException(
+                "\nIllegal push() as the stack is full\n"
+            );
         }// END IF
-    }// END ensure_capacity()
 
-    public void push(int data)
-    {
-        this.ensure_capacity();
         this.array[this.size] = data;
         this.size++;
     }// END push()
 
-    public int pop()
+    public int pop() throws StackException
     {
         if (this.is_empty() == true)
         {
-            throw new IllegalStateException();
+            throw new StackException(
+                "\nIllegal pop() as the stack is empty\n"
+            );
         }// END IF
 
         int data = this.array[size - 1];
@@ -79,3 +79,16 @@ public class StackArray
         System.out.println("");
     }// END display_stack()
 }// END CLASS StackArray
+
+class StackException extends Exception
+{
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
+
+    public StackException(String message)
+    {
+        super(message);
+    }// END CONSTRUCTOR StackException
+}// END CLASS StackException
