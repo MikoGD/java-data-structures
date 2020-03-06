@@ -1,4 +1,4 @@
-package stack_array;
+package data_structures.stack_array;
 
 import java.util.Arrays;
 
